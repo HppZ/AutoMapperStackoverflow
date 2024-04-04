@@ -45,7 +45,8 @@ class Profile1 : Profile
 {
     public Profile1()
     {
-        CreateMap<A, AModel>().ForMember(x => x.B, o => o.MapFrom<ValueResolver1>());
+        CreateMap<A, AModel>().ForMember(x => x.B, o => o.MapFrom<ValueResolver1>())
+            .PreserveReferences(); // works!
         CreateMap<B, BModel>();
     }
 }
